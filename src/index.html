@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>	
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<title>Weather App</title>
+</head>
+<body>
+	<h1 class="header" id="geo-location">{{ message }}</h1>
+	<h2 class="header" id="voting">Default: {{ neutral }}, Likely: {{ yes }}, Unlikely: {{ no }}</h2>
+	<div id="weather" class="neutralBox">
+		<div>Date: {{ date }}</div>
+		<div>Tempurature: {{ tempurature }} F</div>
+		<div>Condition: {{ condition }}</div>
+		<div>Humidity: {{ humidity }} %</div>
+		<div>Pressure: {{ pressure }} hPa</div>
+	</div>
+
+	<div id="forecasts" >
+		<div v-for="n in forecast.length" 
+			v-bind:class="{ neutralBox: forecast[n-1][5] == 0, trueBox: forecast[n-1][5] == 1, falseBox: forecast[n-1][5] == 2 }" 
+			v-on:click="cycleStatus(n-1)">
+			<div>Date: {{ forecast[n-1][0] }}</div>
+			<div>Tempurature: {{ forecast[n-1][1] }} F</div>
+			<div>Condition: {{ forecast[n-1][2] }}</div>
+			<div>Humidity: {{ forecast[n-1][3] }} %</div>
+			<div>Pressure: {{ forecast[n-1][4] }} hPa</div>
+		</div>
+	</div>
+
+	<script src="weather.js"></script>
+</body>
+</html>
+

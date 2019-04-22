@@ -1,0 +1,45 @@
+body {
+	background-color: #333;
+}
+
+.neutralBox {
+	width: 12%;
+	background-color: black;
+	margin: 1em;
+	padding: 1em;
+	border-radius: 1em;
+	float: left;
+	color: white;
+}
+.trueBox {
+	width: 12%;
+	background-color: blue;
+	margin: 1em;
+	padding: 1em;
+	border-radius: 1em;
+	float: left;
+	color: white;
+}
+
+.falseBox {
+	width: 12%;
+	background-color: red;
+	margin: 1em;
+	padding: 1em;
+	border-radius: 1em;
+	float: left;
+	color: white;
+}
+
+.weatherData {
+	color: white;
+}
+
+.todaysWeather {
+	overflow: hidden;
+}	
+
+.header {
+	color: black;
+	margin: 1em;
+}
